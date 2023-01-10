@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useEffect} from 'react'
+import AboutUs from './components/About_Us/AboutUs'
+import Contact from './components/Contact/Contact'
+import Home from './components/Home/Home'
+import Leadership from './components/Leadership/Leadership'
+import SmartMeetings from './components/Smart_Meetings/SmartMeetings'
+import Training from './components/Training/Training'
+import WOW from 'wowjs';
 
-function App() {
+
+const App = () => {
+  useEffect(() => {
+    new WOW.WOW({
+      live: false
+    }).init();
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Home />
+      <AboutUs />
+      <SmartMeetings />
+      <Training />
+      <Leadership />
+      <Contact />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
